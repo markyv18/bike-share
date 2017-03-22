@@ -15,4 +15,8 @@ class WeatherCondition < ActiveRecord::Base
     WeatherCondition.count
   end
 
+
+  
+
+
 end
