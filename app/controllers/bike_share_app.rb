@@ -140,6 +140,7 @@ class BikeShareApp < Sinatra::Base
 
       erb :"trips/index"
     else
+
       redirect '/trips/page/1'
     end
   end

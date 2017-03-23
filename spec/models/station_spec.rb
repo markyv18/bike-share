@@ -93,135 +93,134 @@ RSpec.describe Station do
       number_of_trips = [trip_1, trip_2, trip_3]
     end
 
-    it 'shows the total stations' do
-      count = Station.total
+    # it 'shows the total stations' do
+    #   count = Station.total
+    #
+    #   expect(count).to eq(4)
+    # end
 
-      expect(count).to eq(4)
-    end
+    # it 'shows the average number of docks per station' do
+    #   average = Station.find_average_docks
+    #
+    #   expect(average).to eq(7)
+    # end
+    #
+    # it 'shows the highest number of docks at a station' do
+    #   max_docks = Station.max_dock_count
+    #
+    #   expect(max_docks).to eq(12)
+    # end
 
-    it 'shows the average number of docks per station' do
-      average = Station.find_average_docks
+    # it 'shows the station(s) with the highest number of docks' do
+    #   station_max_docks = Station.stations_with_most_docks
+    #   stations = [Station.find(1), Station.find(3)]
+    #
+    #   expect(station_max_docks).to eq(stations)
+    # end
+    #
+    # it 'shows the fewest number of docks at a station' do
+    #   min_docks = Station.min_dock_count
+    #
+    #   expect(min_docks).to eq(2)
+    # end
 
-      expect(average).to eq(7)
-    end
-
-    it 'shows the highest number of docks at a station' do
-      max_docks = Station.max_dock_count
-
-      expect(max_docks).to eq(12)
-    end
-
-    it 'shows the station(s) with the highest number of docks' do
-      station_max_docks = Station.stations_with_most_docks
-      stations = [Station.find(1), Station.find(3)]
-
-      expect(station_max_docks).to eq(stations)
-    end
-
-    it 'shows the fewest number of docks at a station' do
-      min_docks = Station.min_dock_count
-
-      expect(min_docks).to eq(2)
-    end
-
-    it 'shows the station(s) with the fewest number of docks' do
-
-      station_min_docks = Station.stations_with_fewest_docks
-      stations = [Station.find(2), Station.find(4)]
-
-      expect(station_min_docks).to eq(stations)
-    end
-
-    it 'shows the first installed station' do
-      oldest = Station.oldest_stations
-      sam = [Station.find(2)]
-
-      expect(oldest).to eq(sam)
-    end
-
-    it 'shows the most recently installed station' do
-      newest = Station.newest_stations
-      beth = [Station.find(1)]
-
-      expect(newest).to eq(beth)
-    end
-  end
-
-  it 'shows the number of rides started at this station' do
-    station = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
-
-    station.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-      expect(station.rides_started).to eq(1)
-  end
-
-  # :duration :start_date :end_date :subscription_type
+    # it 'shows the station(s) with the fewest number of docks' do
+    #
+    #   station_min_docks = Station.stations_with_fewest_docks
+    #   stations = [Station.find(2), Station.find(4)]
+    #
+    #   expect(station_min_docks).to eq(stations)
+    # end
+    #
+    # it 'shows the first installed station' do
+    #   oldest = Station.oldest_stations
+    #   sam = [Station.find(2)]
+    #
+    #   expect(oldest).to eq(sam)
+    # end
+  #
+  #   it 'shows the most recently installed station' do
+  #     newest = Station.newest_stations
+  #     beth = [Station.find(1)]
+  #
+  #     expect(newest).to eq(beth)
+  #   end
+  # end
+  #
+  # it 'shows the number of rides started at this station' do
+  #   station = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #   station.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #     expect(station.rides_started).to eq(1)
+  # end
 
 
-  it 'shows the number of rides ended at this station' do
 
-    station = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  # it 'shows the number of rides ended at this station' do
+  #
+  #   station = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #   station.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   expect(station.rides_ended).to eq(1)
+  # end
 
-    station.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  # it 'shows Most frequent destination station for rides that start from this station' do
+  #
+  #   station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #   station_2 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #
+  #   station_1.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   station_1.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   station_2.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   expect(station_1.most_frequent_destination).to eq(2)
+  #   expect(station_2.most_frequent_destination).to eq(1)
+  # end
 
-    expect(station.rides_ended).to eq(1)
-  end
-
-  it 'shows Most frequent destination station for rides that start from this station' do
-
-    station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
-
-    station_2 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
-
-
-    station_1.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-    station_1.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-    station_2.end_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-    expect(station_1.most_frequent_destination).to eq(2)
-    expect(station_2.most_frequent_destination).to eq(1)
-  end
-
-  it 'shows Most frequent origination station for rides that ended at this station' do
-
-    station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
-
-    expect(station_1.most_frequent_origination).to eq(2)
-  end
+  # it 'shows Most frequent origination station for rides that ended at this station' do
+  #
+  #   station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #   station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer')
+  #
+  #   expect(station_1.most_frequent_origination).to eq(2)
+  # end
 
   # it 'shows date with the highest number of trips started at this location' do
   #
   #
   # end
   #
-  it 'shows zip code with most frequent use' do
-    station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  # it 'shows zip code with most frequent use' do
+  #   station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+  #
+  #   station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96007)
+  #
+  #   station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96007)
+  #
+  #   station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96009)
+  #
+  #   expect(station_1.most_frequent_zip_code).to eq([96007])
+  # end
 
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96007)
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96007)
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', zip_code: 96009)
-
-    expect(station_1.most_frequent_zip_code).to eq([96007])
-  end
-
-  it 'shows the bike ID most frequently starting a trip at this station' do
-
-    station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 33)
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 33)
-
-    station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 44)
-
-    expect(station_1.most_bikes_starting_here).to eq([33])
+#   it 'shows the bike ID most frequently starting a trip at this station' do
+#
+#     station_1 = Station.create(lat: 37.329732, long: -121.90178200000001, name: 'Turing Station', dock_count: 12, installation_date:  Date.parse('8/6/2013'))
+#
+#     station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 33)
+#
+#     station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 33)
+#
+#     station_1.start_trips.create(duration: 22, start_date:Date.parse('8/6/2013'), end_date: Date.parse('8/6/2013'), subscription_type: 'customer', bike_id: 44)
+#
+#     expect(station_1.most_bikes_starting_here).to eq([33])
   end
 end

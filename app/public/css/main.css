@@ -12,6 +12,11 @@ nav {
   padding: 14px 16px;
 }
 
+.div-info {
+  display: flex;
+  justify-content: center;
+}
+
 .nav-link {
   color: white;
   float: right;
@@ -46,4 +51,12 @@ nav {
    height:30px;
    text-align: right;
    padding: 14px 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
 }
